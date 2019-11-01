@@ -4,7 +4,6 @@
   "description": "A Bot Designed To Replace Other Bots and Reduce Bot Amount in Servers!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
     "start": "node index.js"
   },
   "author": "therawcode",
