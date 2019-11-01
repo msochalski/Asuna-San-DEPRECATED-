@@ -55,4 +55,4 @@ client.on("disconnect",() =>{
     db = null;
     console.log('Database instance destroyed')
 });
-client.login(process.env.TOKEN);
+client.login(process.env.BOT_TOKEN);
