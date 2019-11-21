@@ -23,7 +23,7 @@ client.on("ready", () => {
     client.user.setPresence({
         status: "online",
         game: {
-            name: "https://teamtrees.org/",
+            name: "https://magic-bot-coder.github.io/therawcode.github.io/",
             type: "PLAYING"
         }
     }); 
