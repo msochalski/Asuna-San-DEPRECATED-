@@ -10,7 +10,7 @@ client.aliases = new Collection();
 client.categories = fs.readdirSync("./commands/");
 
 config({
-    path: __dirname + "/.env"
+    path: __dirname + "/.esnv"
 });
 
 ["command"].forEach(handler => {
