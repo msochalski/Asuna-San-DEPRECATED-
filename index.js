@@ -23,13 +23,13 @@ client.on("ready", () => {
     client.user.setPresence({
         status: "online",
         game: {
-            name: "https://magic-bot-coder.github.io/therawcode.github.io/",
+            name: "Mag1c is my Creator",
             type: "PLAYING"
         }
     }); 
 });
 client.on("message", async message => {
-    const prefix = "cream ";
+    const prefix = "cream ", "Cream ";
 
     if (message.author.bot) return;
     if (!message.guild) return;
