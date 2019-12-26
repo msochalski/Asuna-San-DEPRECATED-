@@ -29,7 +29,7 @@ client.on("ready", () => {
     }); 
 });
 client.on("message", async message => {
-    const prefix = "cream ", "Cream ";
+    const prefix = "cream ";
 
     if (message.author.bot) return;
     if (!message.guild) return;
