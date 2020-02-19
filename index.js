@@ -23,8 +23,9 @@ client.on("ready", () => {
     client.user.setPresence({
         status: "dnd",
         game: {
-            name: "https://www.twitch.tv/m_ag1c",
-            type: "STREAMING"
+            name: "Watching my King",
+            type: "STREAMING",
+            url: "https://www.twitch.tv/m_ag1c"
         }
     }); 
 });
