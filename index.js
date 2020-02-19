@@ -21,10 +21,10 @@ client.on("ready", () => {
     console.log(`Hi, ${client.user.username} is now online!`);
     
     client.user.setPresence({
-        status: "online",
+        status: "dnd",
         game: {
-            name: "Mag1c is my Creator",
-            type: "PLAYING"
+            name: "https://www.twitch.tv/m_ag1c",
+            type: "STREAMING"
         }
     }); 
 });
