@@ -24,24 +24,24 @@ module.exports = {
         await client.sleep(1500);
         if (person) {
           await prompt.edit('Finding discord login...');
-          await client.sleep(1700);
+          
           await prompt.edit(`Found:\n**Email**: \`${person.displayName}***@gmail.com\`\n**Password**: \`*******\``);
-          await client.sleep(1700);
+          
           await prompt.edit('Fetching dms');
-          await client.sleep(1000);
+          
           await prompt.edit('Listing most common words...');
-          await client.sleep(1000);
+          
           await prompt.edit(`Injecting virus into discriminator #${person.discriminator}`);
-          await client.sleep(1000);
+          
           await prompt.edit('Virus injected');
-          await client.sleep(1000);
+          
         }
         await prompt.edit('Finding IP address');
-        await client.sleep(2000);
+        
         await prompt.edit('Spamming email...');
-        await client.sleep(1000);
+        
         await prompt.edit('Selling data to facebook...');
-        await client.sleep(1000);
+        
         await prompt.edit(`Finished hacking ${user ? person.displayName : person}`);
         return 'The hack is complete.';
       },
