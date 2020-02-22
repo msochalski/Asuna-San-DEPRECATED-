@@ -47,7 +47,7 @@ client.on("message", async message => {
     
     if(command === "woman") {
     await message.channel.send("Hold on checking dm's...");
-    m.edit(`El Mujer loves El Hombre as much as 0. Unlucky master`);
+    message.edit(`El Mujer loves El Hombre as much as 0. Unlucky master`);
   }
 
     if (command) 
