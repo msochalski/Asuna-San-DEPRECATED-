@@ -44,11 +44,6 @@ client.on("message", async message => {
     
     let command = client.commands.get(cmd);
     if (!command) command = client.commands.get(client.aliases.get(cmd));
-    
-    if(command === "woman") {
-    await message.channel.send("Hold on checking dm's...");
-    message.edit(`El Mujer loves El Hombre as much as 0. Unlucky master`);
-  }
 
     if (command) 
         command.run(client, message, args);
