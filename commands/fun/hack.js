@@ -42,7 +42,7 @@ module.exports = {
         
         await prompt.edit('Selling data to facebook...');
         
-        await prompt.edit(`Finished hacking ${user ? person.displayName : person}`);
+        await prompt.edit(`Finished hacking ${person ? person.displayName : person}`);
         return 'The hack is complete.';
       },
       
