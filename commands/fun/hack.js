@@ -31,7 +31,7 @@ module.exports = {
           
           await prompt.edit('Listing most common words...');
           
-          await prompt.edit(`Injecting virus into discriminator #${member.discriminator}`);
+          await prompt.edit(`Injecting virus into ID ${person.id}`);
           
           await prompt.edit('Virus injected');
           
