@@ -21,7 +21,7 @@ module.exports = {
                 .random();
         }
         const prompt = await message.channel.send(`Hacking ${person ? person.displayName : person} now...`);
-        await client.sleep(1500);
+        
         if (person) {
           await prompt.edit('Finding discord login...');
           
