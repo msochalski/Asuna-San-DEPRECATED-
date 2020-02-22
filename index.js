@@ -46,9 +46,7 @@ client.on("message", async message => {
     if (!command) command = client.commands.get(client.aliases.get(cmd));
     
     if(command === "woman") {
-    // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
-    // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
-    const m = await message.channel.send("Hold on checking dm's...");
+    await message.channel.send("Hold on checking dm's...");
     m.edit(`El Mujer loves El Hombre as much as 0. Unlucky master`);
   }
 
