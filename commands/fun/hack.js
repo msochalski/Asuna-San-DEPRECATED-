@@ -21,7 +21,7 @@ module.exports = {
                 .random();
         }
         const prompt = await message.channel.send(`Hacking ${person ? person.displayName : person} now...`);
-        
+        await client.sleep(1500);
         if (person) {
           await prompt.edit('Finding discord login...');
           
@@ -31,7 +31,7 @@ module.exports = {
           
           await prompt.edit('Listing most common words...');
           
-          await prompt.edit(`Injecting virus into discriminator #${person.discriminator}`);
+          await prompt.edit(`Injecting virus into discriminator #${member.discriminator}`);
           
           await prompt.edit('Virus injected');
           
@@ -42,7 +42,7 @@ module.exports = {
         
         await prompt.edit('Selling data to facebook...');
         
-        await prompt.edit(`Finished hacking ${person ? person.displayName : person}`);
+        await prompt.edit(`Finished hacking ${person ? message.member.displayName : person}`);
         return 'The hack is complete.';
       },
       
