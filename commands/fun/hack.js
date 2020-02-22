@@ -20,7 +20,7 @@ module.exports = {
                 .filter(m => m.id !== message.author.id)
                 .random();
         }
-        const prompt = await msg.channel.createMessage(`Hacking ${person ? hacked.username : hacked} now...`);
+        const prompt = await message.channel.createMessage(`Hacking ${person ? hacked.username : hacked} now...`);
         await client.sleep(1500);
         if (person) {
           await prompt.edit('Finding discord login...');
