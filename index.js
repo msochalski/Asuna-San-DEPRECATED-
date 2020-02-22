@@ -46,7 +46,7 @@ client.on("message", async message => {
     if (!command) command = client.commands.get(client.aliases.get(cmd));
     
     if command == ("woman");
-        return message.channel.send("el mujer loves the main man himself el hombre")
+        return message.channel.send("el mujer loves the main man himself el hombre");
 
     if (command) 
         command.run(client, message, args);
