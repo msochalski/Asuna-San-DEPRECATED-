@@ -4,7 +4,7 @@ const ytdl = require('ytdl-core');
 module.exports = {
     name: "play",
     aliases: ["play", "Play"],
-    category: "Fun",
+    category: "fun",
     description: "Plays Music",
     run: async (client, message, args, ops) => {
         if (!message.member.voiceChannel) return message.channel.send('Please connect to a voice channel.')
