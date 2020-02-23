@@ -13,7 +13,7 @@ module.exports = {
          return message.channel.send(`***sorry word not found!***`)
    });
 
-   const embed = new Discord.MessageEmbed()
+   const embed = new RichEmbed()
        .setColor('RANDOM')
        .setTitle(res.word)
        .setURL(res.urbanURL)
