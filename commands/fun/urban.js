@@ -1,4 +1,4 @@
-const urban = require('urban-dictionary'),
+const urban = require('urban-dictionary');
 const { RichEmbed } = require("discord.js");
 
    module.exports = {
