@@ -1,17 +1,16 @@
 const urban = require('urban-dictionary');
 const { RichEmbed } = require("discord.js");
+module.exports = {
+   name: "urban",
+   aliases: ["urban", "Urban"],
+   category: "fun",
+   description: "Gets definition from urban dictionary",
+   usage: "[args input]",
+   run: async(client, message, args, tools) => {
+      if (!args[0]) return message.channel.send(`***please write somthing***`);
 
-   module.exports = {
-       name: "urban",
-       aliases: ["urban", "Urban"],
-       category: "fun",
-       description: "Gets definition from urban dictionary",
-       usage: "[args input]",
-       run: async(client, message, args, tools) => {
-           if (!args[0]) return message.channel.send(`***please write somthing***`);
-
-   let res = await urban(args.join('')).catch(e => { 
-       return message.channel.send(`***sorry word not found!***`)
+      let res = await urban(args.join('')).catch(e => { 
+         return message.channel.send(`***sorry word not found!***`)
    });
 
    const embed = new Discord.MessageEmbed()
