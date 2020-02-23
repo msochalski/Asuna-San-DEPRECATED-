@@ -11,7 +11,7 @@ module.exports = {
         if (message.deletable) message.delete();
         
         // If there's no argument
-        if (!args[1])
+        if (!args[0])
             return message.channel.send(`${message.member}, Please provide an idea for the suggestion`).then(m => m.delete(5000));
         
         const channel = message.guild.channels.find(c => c.name === "suggestions")
