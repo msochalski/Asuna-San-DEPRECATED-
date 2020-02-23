@@ -2,10 +2,10 @@ const urban = require('urban-dictionary'),
         Discord = require('discord.js');
 
     module.exports = {
-        name: "Urban",
-        aliases: ["array", "of", "aliases"],
+        name: "urban",
+        aliases: ["urban", "Urban"],
         category: "fun",
-        description: "Command description",
+        description: "Gets definition from urban dictionary",
         usage: "[args input]",
         run: async(client, message, args, tools) => {
             if (!args[0]) return message.channel.send(`***please write somthing***`);
