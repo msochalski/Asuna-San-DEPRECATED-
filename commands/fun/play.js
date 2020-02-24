@@ -1,4 +1,5 @@
 const ytdl = require('ytdl-core');
+const { RichEmbed } = require("discord.js");
 
 
 module.exports = {
