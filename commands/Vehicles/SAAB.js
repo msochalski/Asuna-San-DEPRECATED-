@@ -4,7 +4,7 @@ const randomPuppy = require("random-puppy");
 module.exports = {
     name: "saab",
     aliases: "SAAB",
-    category: "fun",
+    category: "Vehicles",
     description: "sends a random image from subreddit",
     run: async (client, message, args) => {
         const subReddits = ["saab"];
