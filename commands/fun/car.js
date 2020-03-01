@@ -1,4 +1,3 @@
-Learn more or give us feedback
 const { RichEmbed } = require("discord.js");
 const randomPuppy = require("random-puppy");
 
