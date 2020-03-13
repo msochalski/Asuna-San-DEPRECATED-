@@ -19,6 +19,6 @@ module.exports = {
                   .send();
             } catch (error) {
               return message.sendError('REQUEST_FAILED');
-            }
-          }
-        };
+      }
+   }
+};
