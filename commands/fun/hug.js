@@ -45,7 +45,7 @@ module.exports = {
 
     let hug10 = new RichEmbed()
     .setColor("#00ff00")
-    .setImage("https://tenor.com/view/my-little-monster-anime-hug-love-gif-13221416");
+    .setImage("https://tenor.com/view/cat-hug-back-hug-notice-me-attention-to-me-gif-14227401");
 
     let hugs = [hug1, hug2, hug3, hug4, hug5, hug6, hug7, hug8, hug9, hug10]
 
