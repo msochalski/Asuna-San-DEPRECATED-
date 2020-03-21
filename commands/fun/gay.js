@@ -22,6 +22,10 @@ module.exports = {
                 .filter(m => m.id !== message.author.id)
                 .random();
         }
+        
+        if(message.mentions.users.first().id === "153919549287170048") return message.reply('Ah yes 100%');
+        if(message.mentions.users.first().id === "272493083348697088") return message.reply('Hmmm must be 100% and a Simp');
+        
 
         // love is the percentage
         // loveIndex is a number from 0 to 10, based on that love variable
