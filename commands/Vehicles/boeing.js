@@ -7,7 +7,7 @@ module.exports = {
     category: "Vehicles",
     description: "sends a random image from subreddit",
     run: async (client, message, args) => {
-        const subReddits = ["boeing"];
+        const subReddits = ["Boeing"];
         const random = subReddits[Math.floor(Math.random() * subReddits.length)];
 
         const img = await randomPuppy(random);
