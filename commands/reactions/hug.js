@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 module.exports = {
     name: "hug",
     aliases: ["hugs"],
-    category: "reaction",
+    category: "reactions",
     description: "sends gifs of hugs",
     run: async (client, message, args) => {
             try {
