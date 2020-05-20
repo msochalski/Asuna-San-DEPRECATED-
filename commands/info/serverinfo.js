@@ -4,6 +4,7 @@ const { getMember, formatDate } = require("../../functions.js");
 
     module.exports = {
     name: "serverinfo",
+    category: "info",
     aliases: ["server", "si", "sinfo"],
     description: "Returns server information",
     run: (client, message, args) => {
