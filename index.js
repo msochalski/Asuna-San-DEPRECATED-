@@ -31,6 +31,22 @@ client.on("ready", () => {
         }
     }); 
 });
+
+client.on("guildCreate", guild => {
+    let channelID;
+    let channels = guild.channels;
+    channelLoop:
+    for (let c of channels) {
+        let channelType = c[1].type;
+        if (channelType === "text") {
+            channelID = c[0];
+            break channelLoop;
+        }
+    }
+  
+    let channel = client.channels.get(guild.systemChannelID || channelID);
+    channel.send(`Thanks for inviting me into this server! Please do /info and /help for the informations you WILL need in order for the bot to work properly. Do /suggest or /bug if there's any suggestions or bug you found. THANKS`);
+});
 client.on("message", async message => {
     const prefix = ">";
 
