@@ -10,7 +10,7 @@ module.exports = {
       message.channel.overwritePermissions(message.guild.id, {
         SEND_MESSAGES: null
       }).then(() => {
-        message.channel.send('Lockdown lifted <a:balancecheck:556017659419033653> WEEEEEEEEEEEEEEEEEEEEEE, enjoy talking while you still can:wink:');
+        message.channel.send('Lockdown lifted :white_check_mark: WEEEEEEEEEEEEEEEEEEEEEE, enjoy talking while you still can:wink:');
         delete client.lockit[message.channel.id];
       }).catch(error => {
         console.log(error);
