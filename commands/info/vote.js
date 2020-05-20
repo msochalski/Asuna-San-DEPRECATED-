@@ -1,10 +1,11 @@
 const { Client, Collection } = require("discord.js");
 
 module.exports = {
-    name: "ping",
-    aliases: ["p"],
+    name: "vote",
+    aliases: ["v"],
     category: "info",
-    description: "Returns latency and API ping", run: async(client, message, args) => {
+    description: "vote for the bot", 
+    run: async(client, message, args) => {
   message.delete();
   let embed = new Discord.RichEmbed()
     .setTitle("Vote for Creambot!")
