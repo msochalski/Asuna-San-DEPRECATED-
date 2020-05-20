@@ -3,8 +3,6 @@ const { config } = require("dotenv");
 const fs = require("fs");
 const { join } = require('path');
 const superagent = require('superagent');
-const MusicClient = require('./client.js');
-const ytdl = require('ytdl-core');
 const client = new Client({
     disableEveryone: true
 });
@@ -55,6 +53,54 @@ client.on("message", async message => {
 
 client.on("message", async message => {
     console.log(`${message.member.guild}, ${message.author.username} said: ${message.content}`);
+});
+client.on('messageDelete', async message => {
+	
+	if (!message.guild) return;
+	const fetchedLogs = await message.guild.fetchAuditLogs({
+		limit: 1,
+		type: 'MESSAGE_DELETE',
+	});
+	const deletionLog = fetchedLogs.entries.first();
+	if (!deletionLog) return console.log(`A message by ${message.author.tag} was deleted, but no relevant audit logs were found.`);
+	const { executor, target } = deletionLog;
+	if (target.id === message.author.id) {
+		console.log(`A message by ${message.author.tag} was deleted by ${executor.tag}.`);
+	}	else {
+		console.log(`A message by ${message.author.tag} was deleted, but we don't know by who.`);
+	}
+});
+client.on('guildMemberRemove', async member => {
+	const fetchedLogs = await member.guild.fetchAuditLogs({
+		limit: 1,
+		type: 'MEMBER_KICK',
+	});
+	const kickLog = fetchedLogs.entries.first();
+	if (!kickLog) return console.log(`${member.user.tag} left the guild, most likely of their own will.`);
+	const { executor, target } = kickLog;
+	if (target.id === member.id) {
+		console.log(`${member.user.tag} left the guild; kicked by ${executor.tag}?`);
+	} else {
+		console.log(`${member.user.tag} left the guild, audit log fetch was inconclusive.`);
+	}
+});
+client.on('guildBanAdd', async (guild, user) => {
+	const fetchedLogs = await guild.fetchAuditLogs({
+		limit: 1,
+		type: 'MEMBER_BAN_ADD',
+	});
+
+	const banLog = fetchedLogs.entries.first();
+
+	if (!banLog) return console.log(`${user.tag} was banned from ${guild.name} but no audit log could be found.`);
+
+	const { executor, target } = banLog;
+
+	if (target.id === user.id) {
+		console.log(`${user.tag} got hit with the swift hammer of justice in the guild ${guild.name}, wielded by the mighty ${executor.tag}`);
+	} else {
+		console.log(`${user.tag} got hit with the swift hammer of justice in the guild ${guild.name}, audit log fetch was inconclusive.`);
+	}
 });
 client.on("disconnect",() =>{
     db = null;
