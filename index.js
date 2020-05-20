@@ -45,7 +45,7 @@ client.on("guildCreate", guild => {
     }
   
     let channel = client.channels.get(guild.systemChannelID || channelID);
-    channel.send(`Thanks for inviting me into this server! Please do /info and /help for the informations you WILL need in order for the bot to work properly. Do /suggest or /bug if there's any suggestions or bug you found. THANKS`);
+    channel.send(`Thanks for inviting me into this server! Please >help for the informations you WILL need in order for the bot to work properly. Do >suggest if there's any suggestions. THANKS`);
 });
 client.on("message", async message => {
     const prefix = ">";
