@@ -20,7 +20,7 @@ config({
 });
 
 client.on("ready", () => {
-    console.log(`Hi, ${client.user.username} is now online!`);
+    console.log(`Hi, I am in ${client.guilds.size} servers and ${client.user.username} is now online!`);
     
     client.user.setPresence({
         status: "dnd",
