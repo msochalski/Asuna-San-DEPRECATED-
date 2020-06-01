@@ -37,6 +37,7 @@ module.exports = {
         }
 
         const toBan = message.mentions.members.first() || message.guild.members.get(args[0]);
+        const channel = message.guild.channels.find(c => c.name === "execution")
 
         // No member found
         if (!toBan) {
@@ -70,27 +71,6 @@ module.exports = {
             .setAuthor(`This verification becomes invalid after 30s.`)
             .setDescription(`Do you want to ban ${toBan}?`)
 
-        // Send the message
-        await message.channel.send(promptEmbed).then(async msg => {
-            // Await the reactions and the reactioncollector
-            const emoji = await promptMessage(msg, message.author, 30, ["✅", "❌"]);
-
-            // Verification stuffs
-            if (emoji === "✅") {
-                msg.delete();
-
-                toBan.ban(args.slice(1).join(" "))
-                    .catch(err => {
-                        if (err) return message.channel.send(`Well.... the ban didn't work out. Here's the error ${err}`)
-                    });
-
-                logChannel.send(embed);
-            } else if (emoji === "❌") {
-                msg.delete();
-
-                message.reply(`ban canceled.`)
-                    .then(m => m.delete(10000));
-            }
-        });
+        return channel.send(embed);
     }
 };
