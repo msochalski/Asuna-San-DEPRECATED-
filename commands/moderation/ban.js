@@ -8,7 +8,7 @@ module.exports = {
     description: "bans the member",
     usage: "<id | mention>",
     run: async (client, message, args) => {
-        const logChannel = message.guild.channels.find(c => c.name === "logs") || message.channel;
+        const logChannel = message.guild.channels.find(c => c.name === "execution") || message.channel;
 
         if (message.deletable) message.delete();
 
@@ -72,7 +72,7 @@ module.exports = {
             .setDescription(`Do you want to ban ${toBan}?`)
 
         // Send the message
-        await channel.send(promptEmbed).then(async msg => {
+        await message.channel.send(promptEmbed).then(async msg => {
             // Await the reactions and the reactioncollector
             const emoji = await promptMessage(msg, message.author, 30, ["✅", "❌"]);
 
