@@ -8,7 +8,7 @@ module.exports = {
     run: async(client, message, args) => {
   message.delete();
   let embed = new Discord.RichEmbed()
-    .setTitle("Vote for Creambot!")
+    .setTitle("Vote for Asuna-San!")
     .addField("Voting on top.gg:", "https://top.gg/bot/613763752352940032")
   message.channel.send({embed});
 }}
