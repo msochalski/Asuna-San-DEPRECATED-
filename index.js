@@ -1,8 +1,13 @@
 const { Client, Collection } = require("discord.js");
 const { config } = require("dotenv");
 const fs = require("fs");
+const express = require("express");
+const app = express();
+var server = require('http').createServer(app);
 const { join } = require('path');
 const superagent = require('superagent');
+const http = require('http');
+http.createServer(app).listen(8080,'127.0.0.1');
 const client = new Client({
     disableEveryone: true
 });
@@ -20,12 +25,12 @@ config({
 });
 
 client.on("ready", () => {
-    console.log(`Hi, I am in ${client.guilds.size} servers and ${client.user.username} is now online!`);
+    console.log(`Hi, ${client.user.username} is now online! I am in ${client.guilds.size} servers`);
     
     client.user.setPresence({
-        status: "dnd",
+        status: "online",
         game: {
-            name: "Watching my King",
+            name: "Watching my Kirito",
             type: "STREAMING",
             url: "https://www.twitch.tv/m_ag1c"
         }
@@ -45,8 +50,19 @@ client.on("guildCreate", guild => {
     }
   
     let channel = client.channels.get(guild.systemChannelID || channelID);
-    channel.send(`Thanks for inviting me into this server! Please >help for the informations you WILL need in order for the bot to work properly. Do >suggest if there's any suggestions. THANKS`);
+    channel.send(`Thanks for inviting me into this server! Please do >help for the informations you WILL need in order for the bot. Do >suggest if there's any suggestions. Arigato`);
 });
+const DiscordBotListAPI = require('dbl-api');
+const api = new DiscordBotListAPI('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMzc2Mzc1MjM1Mjk0MDAzMiIsImJvdCI6dHJ1ZSwiaWF0IjoxNTg5ODgzNTUxfQ.4dDGuvN9P6nbUeQeeJ8F6Q1y2wqCMghjIPNce52lbU8');
+
+app.get("/", (request, response) => {
+    console.log(Date.now() + " Ping Received");
+    response.sendStatus(200);
+});
+
+api.on('upvote', (user, bot) => console.log(`Upvote by ${user} for bot ${bot}`));
+api.on('unvote', (user, bot) => console.log(`Unvote by ${user} for bot ${bot}`));
+
 client.on("message", async message => {
     const prefix = ">";
 
