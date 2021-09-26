@@ -53,7 +53,7 @@ client.on("guildCreate", guild => {
     channel.send(`Thanks for inviting me into this server! Please do >help for the informations you WILL need in order for the bot. Do >suggest if there's any suggestions. Arigato`);
 });
 const DiscordBotListAPI = require('dbl-api');
-const api = new DiscordBotListAPI('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMzc2Mzc1MjM1Mjk0MDAzMiIsImJvdCI6dHJ1ZSwiaWF0IjoxNTg5ODgzNTUxfQ.4dDGuvN9P6nbUeQeeJ8F6Q1y2wqCMghjIPNce52lbU8');
+const api = new DiscordBotListAPI(**);
 
 app.get("/", (request, response) => {
     console.log(Date.now() + " Ping Received");
